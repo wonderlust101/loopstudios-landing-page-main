@@ -1,0 +1,42 @@
+@use '../../../assets/styles/abstract' as a;
+
+.hero {
+  grid-area: 1/1 / 1/4;
+  display: grid;
+  margin-bottom: -10rem;
+
+  &__image {
+    position: relative;
+    top: -10rem;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    max-width: unset;
+    filter: brightness(40%);
+    
+    @include a.breakpoint(medium) {
+      top: -10rem;
+    }
+  }
+
+  &__text {
+    place-self: center;
+    position: absolute;
+    width: min(80%, 22rem);
+    margin-bottom: 16rem;
+    padding: 1.5rem;
+    color: white;
+    border: 2px solid white;
+    
+    @include a.breakpoint(medium) {
+      justify-self: flex-start;
+      margin-left: 4rem;
+      width: 21rem;
+    }
+    
+    @include a.breakpoint(large) {
+      justify-self: flex-start;
+      width: 36rem;
+    }
+  }
+}

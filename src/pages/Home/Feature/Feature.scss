@@ -1,0 +1,44 @@
+@use '../../../assets/styles/abstract' as a;
+
+.feature {
+  grid-area: 2/2;
+  justify-self: center;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  gap: 3rem;
+  position: relative;
+  width: min(100%, 80rem);
+  
+  @include a.breakpoint(large) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__text {
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+    width: 90%;
+
+    @include a.breakpoint(large) {
+      grid-area: 1/1 / 1/3;
+      width: 35rem;
+      justify-self: flex-end;
+      align-self: flex-end;
+      padding: 6rem 0 0 6rem;
+      text-align: left;
+      background-color: white;
+    }
+  }
+
+  &__body {
+    opacity: 0.5;
+  }
+
+  &__picture {
+    @include a.breakpoint(large) {
+      grid-area: 1/1 / 1/3;
+      justify-self: flex-start;
+    }
+  }
+}

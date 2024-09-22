@@ -1,0 +1,89 @@
+@use '../../assets/styles/abstract' as a;
+
+.footer {
+  background-color: a.$clr-black;
+
+  &__content {
+    grid-area: 1/2;  
+    display: grid;
+    justify-items: center;
+    gap: 3rem;
+    padding: 3.5rem 3.25rem;
+
+    @include a.breakpoint(medium) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2.75rem 3.25rem;
+    }
+  }
+  
+  &__top {
+    display: grid;
+    justify-items: center;
+    gap: 2rem;
+
+    @include a.breakpoint(medium) {
+      justify-items: flex-start;
+      gap: 1rem;
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    justify-items: center;
+    gap: 1.5rem;
+
+    @include a.breakpoint(medium) {
+      justify-items: flex-end;
+      gap: 1rem;
+    }
+  }
+
+  &__logo {
+    width: 9rem;
+  }
+
+  &__links {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+
+    @include a.breakpoint(medium) {
+      display: flex;
+    }
+  }
+
+  &__link {
+    color: white;
+    margin-bottom: 2px;
+    padding-bottom: 0.5rem;
+
+    &:hover {
+      margin-bottom: 0;
+      border-bottom: white solid 2px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1rem;
+    color: a.$clr-white;
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+    padding-bottom: 0.5rem;
+    
+    &:hover {
+      margin-bottom: 0;
+      border-bottom: white solid 2px;
+    }
+  }
+
+  &__copyright {
+    opacity: 0.5;
+    color: a.$clr-white;
+  }
+}

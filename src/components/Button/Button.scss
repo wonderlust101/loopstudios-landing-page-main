@@ -1,0 +1,25 @@
+@use  '../../assets/styles/abstract' as a;
+
+.button {
+  width: 100%;
+  padding: 0.8rem 2.25rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  letter-spacing: 0.3125rem;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  
+  &--black {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+
+    
+    &:hover {
+      color: white;
+      background-color: black;
+      border: 1px solid transparent;
+    }
+  }
+}

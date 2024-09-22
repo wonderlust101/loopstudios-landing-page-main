@@ -1,0 +1,83 @@
+@use '../../../assets/styles/abstract' as a;
+
+.creations {
+  grid-area: 3/2;
+  justify-self: center;
+  display: grid;
+  justify-items: center;
+  gap: 3rem;
+
+  @include a.breakpoint(large) {
+    grid-template: repeat(2, max-content)/ repeat(2, 1fr);
+    max-width: 65rem;
+  }
+
+  &__header {
+    text-align: center;
+
+    @include a.breakpoint(large) {
+      grid-area: 1/1;
+      justify-self: flex-start;
+    }
+  }
+
+  &__button {
+    grid-area: 1/2;
+    justify-self: flex-end;
+    align-self: center;
+    width: max-content !important;
+  }
+
+  &__grid {
+    grid-area: 2/1 / 2/3;
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    max-width: 41rem;
+
+    @include a.breakpoint(large) {
+      grid-template: repeat(2, max-content) / repeat(4, 1fr);
+      max-width: unset;
+    }
+  }
+
+  &__creation {
+    display: grid;
+    align-content: flex-end;
+    position: relative;
+    padding: 1.25rem;
+    height: 7.5rem;
+    line-height: unset;
+    color: white;
+
+    @include a.breakpoint(large) {
+      height: 28.125rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 100%);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    &:hover {
+      color: black;
+
+      &::after {
+        background: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  &__creation-title {
+    z-index: 1;
+    @include a.breakpoint(large) {
+      width: 60%;
+    }
+  }
+}
