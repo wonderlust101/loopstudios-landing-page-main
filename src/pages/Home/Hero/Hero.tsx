@@ -10,8 +10,8 @@ export default function Hero() {
         <section className="hero">
             <h1 className="hero__text">Immersive experiences that deliver</h1>
             
-            <picture>
-                <source srcSet={heroImageDesktop} media="(min-width: 48rem)"/>
+            <picture className="hero__picture">
+                <source className="hero__image" srcSet={heroImageDesktop} media="(min-width: 48rem)"/>
                 <img className="hero__image" src={heroImageMobile} alt="" role="presentation"/>
             </picture>
         </section>

@@ -49,14 +49,19 @@ export default function Header() {
             <div className="header__content">
                 <img className="header__logo" src={Logo} alt="Loopstudios Logo"/>
 
-                {width > 768 ?
-                    <HeaderMenu links={navigationLinks}/> :
+                {width > 768 ? (<HeaderMenu links={navigationLinks}/>) : (
                     <>
-                        {isOpen ?
-                            <HeaderList links={navigationLinks} onClick={handleToggleMenu} isOpen={isOpen}/> : null}
-                    </>}
-                
-                <img className="header__logo" src={menuIcon} alt="Loopstudios Logo" onClick={handleToggleMenu}/>
+                        {<HeaderList links={navigationLinks}
+                                                onClick={handleToggleMenu}
+                                                isOpen={isOpen}/>}
+                        <img
+                            className="header__menu-icon"
+                            src={menuIcon}
+                            alt={isOpen ? "Close Menu" : "Open Menu"}
+                            onClick={handleToggleMenu}
+                        />
+                    </>
+                )}
             </div>
         </header>
     )

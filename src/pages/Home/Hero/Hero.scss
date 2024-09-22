@@ -5,7 +5,11 @@
   display: grid;
   margin-bottom: -10rem;
 
-  &__image {
+  @include a.breakpoint(medium) {
+    grid-template-columns: 1fr min(100% - 4rem * 2, 100rem) 1fr;
+  }
+
+  &__picture {
     position: relative;
     top: -10rem;
     left: 0;
@@ -13,10 +17,16 @@
     width: 100%;
     max-width: unset;
     filter: brightness(40%);
-    
+
     @include a.breakpoint(medium) {
+      grid-area: 1/1 / 1/4;
       top: -10rem;
     }
+  }
+
+
+  &__image {
+    width: 100%;
   }
 
   &__text {
@@ -27,13 +37,14 @@
     padding: 1.5rem;
     color: white;
     border: 2px solid white;
-    
+
     @include a.breakpoint(medium) {
+      position: unset;
+      grid-area: 1/2;
       justify-self: flex-start;
-      margin-left: 4rem;
       width: 21rem;
     }
-    
+
     @include a.breakpoint(large) {
       justify-self: flex-start;
       width: 36rem;
