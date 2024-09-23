@@ -12,7 +12,7 @@ type creation = {
 const creations: creation[] = creationsJSON;
 
 export default function Creations() {
-    const {height, width} = useWindowDimensions();
+    const {width} = useWindowDimensions();
 
     return (
         <section className="creations">

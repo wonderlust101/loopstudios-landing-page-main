@@ -38,7 +38,7 @@ const navigationLinks: link[] = [
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
-    const {height, width} = useWindowDimensions();
+    const {width} = useWindowDimensions();
 
     function handleToggleMenu() {
         setIsOpen(!isOpen);
@@ -52,8 +52,8 @@ export default function Header() {
                 {width > 768 ? (<HeaderMenu links={navigationLinks}/>) : (
                     <>
                         {<HeaderList links={navigationLinks}
-                                                onClick={handleToggleMenu}
-                                                isOpen={isOpen}/>}
+                                     onClick={handleToggleMenu}
+                                     isOpen={isOpen}/>}
                         <img
                             className="header__menu-icon"
                             src={menuIcon}
