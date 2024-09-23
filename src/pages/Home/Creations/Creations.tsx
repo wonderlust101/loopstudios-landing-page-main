@@ -25,7 +25,7 @@ export default function Creations() {
                     <li>
                         <a className="creations__creation"
                              style={{
-                                 background: `url(/images/${width > 1024 ? 'desktop' : 'mobile'}/${creation.img}) no-repeat center`,
+                                 background: `url(./images/${width > 1024 ? 'desktop' : 'mobile'}/${creation.img}) no-repeat center`,
                                  backgroundSize: 'cover',
                              }}>
 
